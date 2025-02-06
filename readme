@@ -1,22 +1,68 @@
-1️⃣ Extract Data
-Run:python extract_data.py
+ FAISS-based Text Search API
+
+This project allows you to extract data, generate embeddings, store them in a FAISS index, and query them through a Flask API.
+
+ 🚀 Setup
+
+ 1️⃣ Install Dependencies
+Ensure you have the required dependencies installed:
+
+pip install -r requirements.txt
+
+
+ 2️⃣ Extract Data
+Run the following command to extract data:
+
+python extract_data.py
+
 This will create extracted_data.txt for reference.
 
-2️⃣ Create Embeddings & Store in FAISS
-Run:python create_embeddings.py
-This will store the FAISS index in faiss_index/.
+ 3️⃣ Create Embeddings & Store in FAISS
+Generate and store embeddings by running:
 
-3️⃣ Run the Flask API
-Run:python app.py
+python create_embeddings.py
+
+This will save the FAISS index in faiss_index/.
+
+ 4️⃣ Run the Flask API
+Start the Flask server with:
+
+python app.py
+
 Your API will be available at:
-http://127.0.0.1:5000/query
+[http://127.0.0.1:5000/query](http://127.0.0.1:5000/query)
 
-4️⃣ Test the API
-Using Postman (Recommended)
-Method: POST
-URL: http://127.0.0.1:5000/query
+ 5️⃣ Test the API
+You can test the API using Postman (Recommended) or via curl.
 
-Test Query:
-{
-  "query": "AI courses" 
-}
+ Using Postman:
+- Method: POST
+- URL: http://127.0.0.1:5000/query
+- Headers: Content-Type: application/json
+- Body:
+  json
+  {
+    "query": "AI courses"
+  }
+  
+
+ Using curl:
+
+curl -X POST "http://127.0.0.1:5000/query" \
+     -H "Content-Type: application/json" \
+     -d '{"query": "AI courses"}'
+
+
+ 📌 Notes
+- Ensure you have the necessary models downloaded before running the scripts.
+- If you encounter any issues, verify that all dependencies are installed and that the FAISS index exists in faiss_index/.
+
+ 🛠 Technologies Used
+- Python
+- FAISS
+- Hugging Face Embeddings
+- Flask
+- Sentence Transformers
+
+ 📜 License
+This project is licensed under the MIT License.
