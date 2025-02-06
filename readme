@@ -1,0 +1,17 @@
+1️⃣ Extract Data
+Run:python extract_data.py
+This will create extracted_data.txt for reference.
+
+2️⃣ Create Embeddings & Store in FAISS
+Run:python create_embeddings.py
+This will store the FAISS index in faiss_index/.
+
+3️⃣ Run the Flask API
+Run:python app.py
+Your API will be available at:
+http://127.0.0.1:5000/query
+
+4️⃣ Test the API
+Using Postman (Recommended)
+Method: POST
+URL: http://127.0.0.1:5000/query
