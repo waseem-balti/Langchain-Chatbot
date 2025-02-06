@@ -32,7 +32,7 @@ class QueryAPI(Resource):
             return jsonify({"error": str(e)}), 500
 
 # Define API route
-api.add_resource(QueryAPI, "/")
+api.add_resource(QueryAPI, "/query")
 
 if __name__ == "__main__":
     app.run(debug=True)
